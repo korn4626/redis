@@ -1,7 +1,7 @@
 # Redis 
 
 ## Config Setting
-1. Config 전체 조회
+* Config 전체 조회
  ```
 redis> config get *
 rdbchecksum
@@ -89,20 +89,20 @@ bind
 oom-score-adj-values
 0 200 800
 ```
-2. config 특정 항목 조회 (notify keyspace event) - 미설정된 상태
+* config 특정 항목 조회 (notify keyspace event) - 미설정된 상태
 ```
 redis> config get notify-keyspace-events
 0
 notify-keyspace-events
 1
 ```
-3. config Setting
-  3.1. key event 설정
+* config Setting
+ 1. key event 설정
 ```
 redis> config set notify-keyspace-events KEA
 OK
 ```
-  3.2. 설정된 상태 확인
+ 2. 설정된 상태 확인
 ```
 redis> config get notify-keyspace-events
 0
@@ -110,8 +110,8 @@ notify-keyspace-events
 1
 AKE
 ```
-  3.3. 설정내용<br>
-    1. keyspace에 관한 설정은 K<br>
-    2. keyevent에 관한 설정은 E<br>
-    3. 그 뒤의 옵션으로 g, $, l, s, h, z, x, e등이 있으며 A를 통하여 앞의 모든것들 설정가능
+ 3. 설정내용
+   1. keyspace에 관한 설정은 K<br>
+   2. keyevent에 관한 설정은 E<br>
+   3. 그 뒤의 옵션으로 g, $, l, s, h, z, x, e등이 있으며 A를 통하여 앞의 모든것들 설정가능
 
