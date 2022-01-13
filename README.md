@@ -97,7 +97,6 @@ notify-keyspace-events
 1
 ```
 3. config Setting
-
   3.1. key event 설정
 ```
 redis> config set notify-keyspace-events KEA
