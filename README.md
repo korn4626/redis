@@ -123,3 +123,20 @@ AKE
   - keyevent에 관한 설정은 E<br>
   - 그 뒤의 옵션으로 g, $, l, s, h, z, x, e등이 있으며 A를 통하여 앞의 모든것들 설정가능
 
+## SourceCode
+### 키생성
+[MakeKey.py](https://github.com/korn4626/Redis_KeyEvent/blob/main/MakeKey.py)
+* 임의의 키 생성 - 1000건을 기준으로 키를 생성하거나 삭제. 수시로 기준 항목 경계로 임의의 키 생성로직
+
+### Notification
+[subscribeKey.py](https://github.com/korn4626/Redis_KeyEvent/blob/main/subscribeKey.py)
+* 0번 서버(키리스트) 항목을 notification
+  * 해당 키의 dbsize를 읽어서 MaxCapacity 비교 => dbsize()함수 실행 속도 이슈로 실시간 반영 안됨. 
+  * key event 확인 : set, del 이벤트는 제대로 들어오는 부분 확인하여 해당 방식으로 count
+  * 기준 항목 MaxC(1000건)보다 큰 경우 TRList에 저장, 작은 경우 TRList 삭제
+* subscribe, psubscribe 차이점
+  * psubscribe는 pattern으로 구독!!->subscribe는 해당 키를 콕 찝어서...
+ 
+### Notification2
+[extest.py](https://github.com/korn4626/Redis_KeyEvent/blob/main/extest.py)
+* curC 항목 읽어서 max 값보다 올라가면 출력
