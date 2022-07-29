@@ -15,3 +15,6 @@ class custom_redis(redis.Redis):
   
 redis_info = custom_redis(host="localhost", port=port, db=dbno, decode_responses=True)
 t = redis_info.hget("test", "test2")
+
+#redis_info = redis.Redis(host="localhost", port=port, db=dbno, decode_responses=True)
+#t = redis_info.hget("test", "test2")
