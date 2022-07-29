@@ -52,7 +52,6 @@ def encrypt_file(filename):
         f.write(data1)
 
 def decrypt_file(filename):
-    ch = CryptHelper(dec_key=enc1, enc_key=enc1)
     with open(filename, 'r') as f:
         data = f.read()
     with open(filename, 'w') as f:
