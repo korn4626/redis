@@ -59,4 +59,4 @@ delete_redis_cache(4, key)
 #저장
 #ttl은 초단위
 ttl = 60*60*24 #하루
-set_redis_cache(3, key=key, value=result, type='hset', sub_key='hash key', ttl=ttl)
+set_redis_cache(4, key=key, value=result, type='hset', sub_key='hash key', ttl=ttl)
