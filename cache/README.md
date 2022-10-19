@@ -1,4 +1,4 @@
-django에서 cache로 redis 사용
+# django에서 cache로 redis 사용
 > settings.py에 cache설정
 ```python
 CACHES = {
@@ -29,7 +29,7 @@ cache = caches['cache_name'].delete(key)
 > 
 > cache로 사용할 경우 redis의 value를 hash사용하는 방법 못찾음.
 
-python redis library 이용
+# python redis library 이용
 > redis connection
 ```python
 redis.StrictRedis(host=ip, port=port, db=database_no, password='password')
