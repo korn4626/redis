@@ -1,5 +1,4 @@
 import redis, ast
-from django.conf import settings
 
 
 def get_redis_cache(dbindex, key, **kwargs):
@@ -50,3 +49,12 @@ def set_redis_cache(dbindex, key, value, **kwargs):
             result = redis_cache.set(key, value)
     return result
 
+#사용예제
+result = get_redis_cache(4, key=key, type='hget', sub_key='hash key', type_change=True)
+
+delete_redis_cache(4, key)
+
+#ttl은 초단위
+
+ttl = 60*60*24 #하루
+set_redis_cache(3, key=key, value=result, type='hset', sub_key='hash key', ttl=ttl)
