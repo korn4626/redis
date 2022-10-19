@@ -50,11 +50,13 @@ def set_redis_cache(dbindex, key, value, **kwargs):
     return result
 
 #사용예제
+#조회
 result = get_redis_cache(4, key=key, type='hget', sub_key='hash key', type_change=True)
 
+#삭제
 delete_redis_cache(4, key)
 
+#저장
 #ttl은 초단위
-
 ttl = 60*60*24 #하루
 set_redis_cache(3, key=key, value=result, type='hset', sub_key='hash key', ttl=ttl)
